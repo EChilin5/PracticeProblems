@@ -1,7 +1,7 @@
 //https://leetcode.com/problems/elimination-game/description/
 public class EliminationGame {
     public static void main(String[] args) {
-        int[] array = new int[9];
+        int[] array = new int[4];
         for(int i = 0; i< array.length; i++){
             array[i] = i+1;
             System.out.print(" " +array[i]);
@@ -22,9 +22,7 @@ public class EliminationGame {
             }
         }
         int[] res = new int[array.length - zeroIndex];
-        for(int i = 0; i < array.length - zeroIndex; i++){
-            res[i] = array[i];
-        }
+
         for(int i = 0; i < res.length; i++){
             System.out.print(" " + res[i] );
         }
@@ -37,9 +35,6 @@ public class EliminationGame {
 
 
     public static int setZeroMatrix(int[] array){
-        if(array.length == 1){
-            return array[0];
-        }
 
         if(array.length != 1){
             array = leftShift(array);
@@ -47,6 +42,10 @@ public class EliminationGame {
         }
         if(array.length != 1){
             array = righShift(array);
+        }
+
+        if(array.length == 1){
+            return array[0];
         }
 
         return setZeroMatrix(array);
