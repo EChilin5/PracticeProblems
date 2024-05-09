@@ -34,6 +34,7 @@ public class Permutation {
             return true;
         }
         char temp = s.charAt(0);
+        // can I swap this out with a for loop.
         int tIndex = isCharPresent(temp, t, 0);
 
         if(tIndex == -1){
